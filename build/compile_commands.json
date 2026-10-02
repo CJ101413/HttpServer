@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/joshua/dev/HttpServer/build",
+  "command": "/usr/lib64/ccache/gcc -g -std=gnu11 -o CMakeFiles/HttpServer.dir/src/main.c.o -c /home/joshua/dev/HttpServer/src/main.c",
+  "file": "/home/joshua/dev/HttpServer/src/main.c",
+  "output": "/home/joshua/dev/HttpServer/build/CMakeFiles/HttpServer.dir/src/main.c.o"
+},
+{
+  "directory": "/home/joshua/dev/HttpServer/build",
+  "command": "/usr/lib64/ccache/gcc -g -std=gnu11 -o CMakeFiles/HttpServer.dir/src/connection.c.o -c /home/joshua/dev/HttpServer/src/connection.c",
+  "file": "/home/joshua/dev/HttpServer/src/connection.c",
+  "output": "/home/joshua/dev/HttpServer/build/CMakeFiles/HttpServer.dir/src/connection.c.o"
+},
+{
+  "directory": "/home/joshua/dev/HttpServer/build",
+  "command": "/usr/lib64/ccache/gcc -g -std=gnu11 -o CMakeFiles/HttpServer.dir/src/utils.c.o -c /home/joshua/dev/HttpServer/src/utils.c",
+  "file": "/home/joshua/dev/HttpServer/src/utils.c",
+  "output": "/home/joshua/dev/HttpServer/build/CMakeFiles/HttpServer.dir/src/utils.c.o"
+}
+]

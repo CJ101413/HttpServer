@@ -1,0 +1,3 @@
+/home/joshua/dev/HttpServer/build/CMakeFiles/HttpServer.dir
+/home/joshua/dev/HttpServer/build/CMakeFiles/edit_cache.dir
+/home/joshua/dev/HttpServer/build/CMakeFiles/rebuild_cache.dir
