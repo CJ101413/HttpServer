@@ -2,6 +2,7 @@
 #include <string.h>
 #include "connection.h"
 #include "utils.h"
+#include <stdbool.h>
 
 //Server
 
@@ -49,8 +50,27 @@ int main()
         {
             path = "/index.html";
         }
-        strcat(filepath, path);
+        if (strcmp(path, "/favicon.ico") == 0)
+        {
+            char header[256];
+            rspn_status.status_code = "204";
+            rspn_status.status = "No Content";
+            rspn_headers.content_length = 0;
 
+            snprintf(header, sizeof(header),
+            "HTTP/1.1 %s %s\r\n"
+            "Content-Length: %d\r\n"
+            "\r\n",
+            rspn_status.status_code,
+            rspn_status.status,
+            rspn_headers.content_length);
+
+            SendAll((long)strlen(&header[0]), connfd, header);
+
+            continue;
+        }
+
+        strcat(filepath, path);
         long file_size = ReturnFileSize(filepath);
         char * buffer = malloc(file_size + 1);
         ReturnBuffer(filepath, file_size, buffer, &bytes_read);
