@@ -192,18 +192,19 @@ void SendAll(long bytes_read, int connfd, char * text)
 
 void SendHeader(long bytes_read, int connfd, struct Rspn_HeaderFields rspn_headerFields, struct Rspn_StatusLine rspn_statusLine)
 {
-     char header[256];
-
-     snprintf(header, sizeof(header),
-        "HTTP/1.1 %d %s\r\n"
+    char header[256];
+    if(strcmp(rspn_statusLine.status_code, "200") == 0)
+    {
+        snprintf(header, sizeof(header),
+        "HTTP/1.1 %s %s\r\n"
         "Content-Type: %s\r\n"
         "Content-Length: %d\r\n"
         "\r\n",
         rspn_statusLine.status_code,
         rspn_statusLine.status,
         rspn_headerFields.content_type,
-        rspn_headerFields.content_length
-    );
+        rspn_headerFields.content_length);
+    }
 
     SendAll(bytes_read, connfd, header);
 }
