@@ -6,20 +6,6 @@
     #include <stdlib.h>
     #include <ctype.h>
 
-    struct Rqst_StatusLine
-    {
-        char * httpMethod;
-        char * url;
-        char * protocal;
-    };
-
-    struct Rqst_HeaderFields
-    {
-        char * host;
-        char * userAgent;
-        char * accept;
-    };
-
     struct Rspn_StatusLine
     {
         char * protocal;
@@ -36,14 +22,6 @@
 
 
     int CreateListSocket();
-
-    void CreateRqstStatus(char ** tokens, struct Rqst_StatusLine * rqst);
-
-    void CreateRqstHeader(char ** lines, int numLines, struct Rqst_HeaderFields * rqst);
-
-    void DestroyRqstStatus(struct Rqst_StatusLine * rqst);
-
-    void DestroyRqstHeader(struct Rqst_HeaderFields * rqst);
 
     struct Rspn_StatusLine CreateRspnStatus( char * protocal, char * status_code, char * status);
 

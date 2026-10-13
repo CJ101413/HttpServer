@@ -3,6 +3,7 @@
 #include "connection.h"
 #include "utils.h"
 #include <stdbool.h>
+#include "request.h"
 
 //Server
 
@@ -26,12 +27,14 @@ int main()
         else
             printf("Server accepted the request!\n");
         
+
+
+            
         char receiving_buffer[6000];
         int received_bytes = recv(connfd, receiving_buffer, sizeof(receiving_buffer), 0);
         if(received_bytes > 0)
             receiving_buffer[received_bytes] = '\0';
 
-        
         int numLines = LineCount(receiving_buffer);
         char * lines[numLines];
         ParseResponse(receiving_buffer, lines, numLines);
@@ -44,7 +47,6 @@ int main()
         CreateRqstHeader(lines, numLines, &rqst_headers);
 
         long bytes_read = 0;
-        
         const char *path = rqst_status.url;
         if (strcmp(path, "/") == 0)
         {
@@ -66,6 +68,10 @@ int main()
             rspn_headers.content_length);
 
             SendAll((long)strlen(&header[0]), connfd, header);
+
+            close(connfd);
+            DestroyRqstHeader(&rqst_headers);
+            DestroyRqstStatus(&rqst_status);
 
             continue;
         }

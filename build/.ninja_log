@@ -1,5 +1,6 @@
 # ninja log v7
-1	38	1791477680763961801	CMakeFiles/HttpServer.dir/src/main.c.o	970c72307e9dc5d9
-38	53	1791477680800961683	HttpServer	1d1a17744aae8462
+0	7	1791546290640595990	CMakeFiles/HttpServer.dir/src/main.c.o	970c72307e9dc5d9
+28	56	1791546419801148934	HttpServer	28862d05ebb0b04
 2	9	1790937070265109695	CMakeFiles/HttpServer.dir/src/utils.c.o	1c29071b05510f5f
-0	39	1791476927118807660	CMakeFiles/HttpServer.dir/src/connection.c.o	56755b3c5cc030b6
+19	80	1791546209314909220	CMakeFiles/HttpServer.dir/src/connection.c.o	56755b3c5cc030b6
+1	27	1791546419774149072	CMakeFiles/HttpServer.dir/src/request.c.o	1ed0d26fff484d8a
