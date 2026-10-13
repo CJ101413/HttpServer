@@ -22,5 +22,11 @@
   "command": "/usr/lib64/ccache/gcc -g -std=gnu11 -o CMakeFiles/HttpServer.dir/src/request.c.o -c /home/joshua/dev/HttpServer/src/request.c",
   "file": "/home/joshua/dev/HttpServer/src/request.c",
   "output": "/home/joshua/dev/HttpServer/build/CMakeFiles/HttpServer.dir/src/request.c.o"
+},
+{
+  "directory": "/home/joshua/dev/HttpServer/build",
+  "command": "/usr/lib64/ccache/gcc -g -std=gnu11 -o CMakeFiles/HttpServer.dir/src/response.c.o -c /home/joshua/dev/HttpServer/src/response.c",
+  "file": "/home/joshua/dev/HttpServer/src/response.c",
+  "output": "/home/joshua/dev/HttpServer/build/CMakeFiles/HttpServer.dir/src/response.c.o"
 }
 ]

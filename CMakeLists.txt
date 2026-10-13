@@ -12,4 +12,6 @@ add_executable(HttpServer src/main.c
     src/utils.h
     src/utils.c
     src/request.h
-    src/request.c)
+    src/request.c
+    src/response.h
+    src/response.c)

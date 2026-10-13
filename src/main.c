@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "connection.h"
 #include "utils.h"
-#include <stdbool.h>
 #include "request.h"
+#include "response.h"
 
 //Server
 
@@ -29,7 +30,7 @@ int main()
         
 
 
-            
+
         char receiving_buffer[6000];
         int received_bytes = recv(connfd, receiving_buffer, sizeof(receiving_buffer), 0);
         if(received_bytes > 0)
