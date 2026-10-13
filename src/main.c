@@ -98,8 +98,11 @@ int main()
             printf("Method Not Allowed\n");
         }
 
-        SendHeader(bytes_read, connfd, rspn_headers, rspn_status);
-        int body_sent = send(connfd, buffer, bytes_read, 0);
+        char header[256];
+        CreateHeader(header, rspn_headers, rspn_status);
+        
+        SendAll(bytes_read, connfd, header);
+        SendAll(bytes_read, connfd, buffer);
 
         close(connfd);
         free(buffer);

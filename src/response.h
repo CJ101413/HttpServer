@@ -20,13 +20,13 @@ struct Rspn_HeaderFields
     char * date;
 };
 
-int CreateListSocket();
-
 struct Rspn_StatusLine CreateRspnStatus( char * protocal, char * status_code, char * status);
 
 struct Rspn_HeaderFields CreateRspnHeader(char * content_type, int content_length, char * date);
 
+void CreateHeader(char * header, struct Rspn_HeaderFields rspn_headerFields, struct Rspn_StatusLine rspn_statusLine);
+
 void SendAll(long bytes_read, int connfd, char * text);
 
-void SendHeader(long bytes_read, int connfd, struct Rspn_HeaderFields rspn_headerFields, struct Rspn_StatusLine rspn_statusLine);
+
     
