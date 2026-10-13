@@ -73,6 +73,22 @@ build CMakeFiles/HttpServer.dir/src/utils.c.o: C_COMPILER__HttpServer_unscanned_
   OBJECT_FILE_DIR = CMakeFiles/HttpServer.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/HttpServer.dir
 
+build CMakeFiles/HttpServer.dir/src/request.c.o: C_COMPILER__HttpServer_unscanned_Debug /home/joshua/dev/HttpServer/src/request.c || cmake_object_order_depends_target_HttpServer
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/HttpServer.dir/src/request.c.o.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles/HttpServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/HttpServer.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/HttpServer.dir
+
+build CMakeFiles/HttpServer.dir/src/response.c.o: C_COMPILER__HttpServer_unscanned_Debug /home/joshua/dev/HttpServer/src/response.c || cmake_object_order_depends_target_HttpServer
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/HttpServer.dir/src/response.c.o.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles/HttpServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/HttpServer.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/HttpServer.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HttpServer
@@ -81,7 +97,7 @@ build CMakeFiles/HttpServer.dir/src/utils.c.o: C_COMPILER__HttpServer_unscanned_
 #############################################
 # Link the executable HttpServer
 
-build HttpServer: C_EXECUTABLE_LINKER__HttpServer_Debug CMakeFiles/HttpServer.dir/src/main.c.o CMakeFiles/HttpServer.dir/src/connection.c.o CMakeFiles/HttpServer.dir/src/utils.c.o
+build HttpServer: C_EXECUTABLE_LINKER__HttpServer_Debug CMakeFiles/HttpServer.dir/src/main.c.o CMakeFiles/HttpServer.dir/src/connection.c.o CMakeFiles/HttpServer.dir/src/utils.c.o CMakeFiles/HttpServer.dir/src/request.c.o CMakeFiles/HttpServer.dir/src/response.c.o
   CONFIG = Debug
   DEP_FILE = CMakeFiles/HttpServer.dir/link.d
   FLAGS = -g
