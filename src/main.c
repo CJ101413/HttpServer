@@ -18,7 +18,7 @@ int main()
 
     while (1)
     {
-        char filepath[] = "/home/joshua/dev/HttpServer";
+        char * base = "/home/joshua/dev/HttpServer";
 
         connfd = accept(sfd, (struct sockaddr *)&client, &len);
         if(connfd < 0){
@@ -77,7 +77,19 @@ int main()
             continue;
         }
 
-        strcat(filepath, path);
+        int filepathSize = strlen(base) + strlen(path) + 1;
+        char * filepath = malloc(filepathSize);
+        memset(filepath, 0, filepathSize);
+        if(filepath == NULL){
+            perror("Malloc Failure");
+            break;
+        }
+        else{
+            strcat(filepath, base);
+            strcat(filepath, path);
+        }
+
+        
         long file_size = ReturnFileSize(filepath);
         char * buffer = malloc(file_size + 1);
         ReturnBuffer(filepath, file_size, buffer, &bytes_read);
@@ -104,7 +116,14 @@ int main()
         SendAll(bytes_read, connfd, header);
         SendAll(bytes_read, connfd, buffer);
 
+
+        
+        for (size_t i = 0; i < numLines; i++)
+            free(lines[i]);
+
         close(connfd);
+        free(filepath);
+        filepath = NULL;
         free(buffer);
         DestroyRqstHeader(&rqst_headers);
         DestroyRqstStatus(&rqst_status);
